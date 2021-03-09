@@ -1,0 +1,479 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+  display: block;
+}
+
+/************************* STICKY FOOTER  *************************/
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+/************************* STICKY FOOTER  *************************/
+
+/* Kansasnew SemiBold
+		font-family: kansasnew, serif;
+		font-weight: 600;
+		font-style: normal; */
+/* Montserrat Regular
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;*/
+/* Montserrat Thin
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 100;*/
+/* Montserrat Light
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300; */
+body {
+  background-color: #fcf1e7;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #292324;
+}
+
+header {
+  position: fixed;
+  z-index: 99;
+  background-color: #fcf1e7;
+  height: 80px;
+  width: 100%;
+}
+
+header img {
+  position: fixed;
+  width: 18%;
+  padding: 6px 0 0 2%;
+  max-width: 83px;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+/***************************HAMBURGER MENU STYLES*******************************/
+.bg-cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #292324;
+  z-index: 0;
+  transition: all 350ms ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.reveal {
+  opacity: .85;
+  display: block;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.hamburger-shell {
+  margin: 0;
+  position: fixed;
+  overflow: hidden;
+  width: 20%;
+  height: 75px;
+  overflow: auto;
+  left: calc(100% - 85px);
+  top: 0;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.top, .middle {
+  position: absolute;
+  width: 62px;
+  height: 10px;
+  background-color: #f04c1f;
+  opacity: 70%;
+  transition: all 350ms ease-in-out;
+  top: 20px;
+}
+
+.middle {
+  top: 40px;
+}
+
+#menu {
+  position: fixed;
+  left: calc(100% - 292px);
+  top: 10px;
+  color: #292324;
+  display: none;
+  margin: 120px 5%;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #fcf1e7;
+  padding: 24px;
+  width: 200px;
+  text-align: right;
+}
+/***************************** NAV UNDERLINE EFFECT *****************************/
+.mobile-link {
+  list-style-type: none;
+  padding-top: 40px;
+}
+
+.mobile-link a {
+  color: #fcf1e7;
+  font-weight: 400;
+}
+
+.mobile-link>a {
+  position: relative;
+  text-decoration: none;
+}
+
+.mobile-link>a:hover {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.mobile-link>a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: -13px;
+  left: 0;
+  background-color: #f6ad9b;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.mobile-link>a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+/***************************** NAV UNDERLINE EFFECT *****************************/
+
+.menu-open .top {
+  transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  top: 30px;
+  background-color: #f6a894;
+  height: 10px;
+  opacity: 100%;
+}
+
+.menu-open .middle {
+  transform: rotate(-225deg);
+  -webkit-transform: rotate(-225deg);
+  top: 30px;
+  background-color: #f6a894;
+  height: 10px;
+  opacity: 100%;
+}
+
+/*************************** HAMBURGER MENU STYLES *******************************/
+
+/**** HOME SECTION ****/
+#home {
+  height: 765px;
+}
+
+.home-image-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#home h1 {
+  font-family: kansasnew, serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2.8rem;
+  text-align: center;
+  z-index: 75;
+  padding-top: 312px;
+}
+
+#home h2 {
+  font-family: kansasnew, serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2.8rem;
+  text-align: center;
+  z-index: 75;
+}
+
+.home-shapes-mobile {
+  width: 100%;
+  max-width: 757px;
+  position: absolute;
+  z-index: -10;
+}
+
+.home-shapes {
+  display: none;
+}
+
+/**** ABOUT SECTION ****/
+#about {
+	padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-flex-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-pic {
+  width: 92%;
+  display: block;
+  max-width: 550px;
+  padding: 0 5%;
+}
+
+figcaption {
+  padding-top: 10px;
+  font-size: .9rem;
+}
+
+#about h2 {
+  font-family: kansasnew, serif;
+  font-weight: 600;
+  font-style: normal;
+  padding: 45px 5%;
+  font-size: 1.8rem;
+  max-width: 550px;
+}
+
+.pink-lines {
+  padding-left: 5%;
+  width: 45%;
+  max-width: 230px;
+}
+
+.pink-lines-desktop {
+  display: none;
+}
+
+.about-flex-bottom-text {
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about p {
+  padding: 12px 5%;
+  max-width: 550px;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  color: #fcf1e7;
+  background-color: #292324;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/************************************* START 380PX MEDIA QUERY *************************************/
+@media (min-width: 380px) {
+
+  /**** HOME SECTION ****/
+  .home-shapes-mobile {
+    display: none;
+  }
+
+  .home-shapes {
+    display: block;
+    position: absolute;
+    z-index: -10;
+    padding-bottom: 140px;
+    width: 57%;
+    min-width: 400px;
+    max-width: 635px;
+  }
+
+  /**** ABOUT SECTION ****/
+  #about h2 {
+    font-size: 2.2rem;
+  }
+
+  #about p {
+    line-height: 1.3rem;
+    font-size: 1rem;
+  }
+}
+  /************************************* END 380PX MEDIA QUERY *************************************/
+  /************************************* START 600PX MEDIA QUERY *************************************/
+@media (min-width: 600px) {
+
+  .pink-lines {
+  display: none;
+  }
+
+  .pink-lines-desktop {
+    display: block;
+    padding-left: 30px;
+  }
+
+}
+  /************************************* END 600PX MEDIA QUERY *************************************/
+  /************************************* START 720PX MEDIA QUERY *************************************/
+@media (min-width: 720px) {
+
+  /**** HOME SECTION ****/
+  #home h1, #home h2 {
+    font-size: 3.2rem;
+  }
+}
+
+    /************************************* END 720PX MEDIA QUERY *************************************/
+    /************************************* START 850PX MEDIA QUERY *************************************/
+@media (min-width: 850px) {
+  /* DESKTOP-NAV STYLES START*/
+  .hamburger-shell {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: block;
+    text-align: right;
+    padding-top: 23px;
+    font-size: 1.3rem;
+  }
+
+  .desktop-nav ul li {
+    display: inline-block;
+    margin-right: 45px;
+  }
+
+  .desktop-nav ul li a {
+    color: #292324;
+    text-decoration: none;
+    font-weight: 400;
+    }
+/***************************** NAV UNDERLINE EFFECT *****************************/
+  .link>a {
+    position: relative;
+    color: #292324;
+    text-decoration: none;
+  }
+
+  .link>a:hover {
+    color: #292324;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .link>a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: -13px;
+    left: 0;
+    background-color: #f6ad9b;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .link>a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+/***************************** NAV UNDERLINE EFFECT *****************************/
+  /* DESKTOP-NAV STYLES END*/
+
+  .hamburger-shell {
+    display: none;
+  }
+
+  /**** ABOUT SECTION ****/
+	#about {
+		margin: auto;
+		width: 95%;
+	}
+
+  .about-flex-image, .about-flex-top-text, .lines-flex, .about-flex-bottom-text {
+    display: block;
+  }
+
+	.about-content-flex {
+		max-width: 1000px;
+		display: flex;
+		justify-content:flex-start;
+	}
+
+	.about-pic {
+	  width: 100%;
+    padding: 0;
+	}
+
+	.about-flex-image {
+		width: 40%;
+	  padding: 3%;
+	}
+
+	.about-flex-copy {
+		width: 60%;
+		padding: 3%;
+	}
+
+  .about-flex-bottom-text {
+    padding: 5px 0;
+  }
+
+  #about h2 {
+    padding: 0;
+  }
+
+  .pink-lines-desktop {
+		padding-top: 15px;
+    padding-left: 0;
+		width: 70%;
+  }
+
+  #about p {
+    padding: 15px 0 0;
+  }
+
+}
+    /************************************* END 850PX MEDIA QUERY *************************************/
+    /************************************* START 1000PX MEDIA QUERY *************************************/
+@media (min-width: 1000px) {
+  #about {
+    width: 75%;
+  }
+
+  .about-pic {
+    min-width: 315px;
+  }
+}
+    /************************************* END 1000PX MEDIA QUERY *************************************/
