@@ -241,7 +241,7 @@ figcaption {
   font-size: .9rem;
 }
 
-#about h2 {
+#about h3 {
   font-family: kansasnew, serif;
   font-weight: 600;
   font-style: normal;
@@ -262,16 +262,37 @@ figcaption {
   padding: 100px 5% 200px;
 }
 
+#work h4 {
+  font-family: kansasnew, serif;
+  font-weight: 600;
+  font-style: normal;
+  padding: 10px 0;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+  display: inline-block;
+  border-bottom: 10px solid rgba(240, 179, 42, .7);
+}
+
+.work-container {
+  padding: 20px 20px 60px;
+  background-color: #292324;
+  border-radius: 15px;
+}
+
 /**** FOOTER ****/
 footer {
   text-align: center;
   color: #fcf1e7;
   background-color: #292324;
-  height: 150px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+footer p {
+  padding: 10px 0;
 }
 
 /************************************* START 380PX MEDIA QUERY *************************************/
@@ -293,7 +314,7 @@ footer {
   }
 
   /**** ABOUT SECTION ****/
-  #about h2 {
+  #about h3, #work h4 {
     font-size: 2.2rem;
   }
 
@@ -404,7 +425,7 @@ footer {
   .about-pic {
     min-width: 315px; */
   }
-  #about h2 {
+  #about h3 {
     padding: 0;
   }
 

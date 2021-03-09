@@ -1,3 +1,6 @@
+/* https://flickity.metafizzy.co/options.html */
+/* https://github.com/metafizzy/flickity-fullscreen */
+
 /*! Flickity v2.2.0
 https://flickity.metafizzy.co
 ---------------------------------------------- */
@@ -46,19 +49,20 @@ https://flickity.metafizzy.co
 
 .flickity-button {
   position: absolute;
-  background: hsla(0, 0%, 100%, 0.75);
+  background: hsla(29, 77.8%, 94.7%, 0.75);
+
   border: none;
   color: #333;
 }
 
 .flickity-button:hover {
-  background: white;
+  background: #fcf1e7;
   cursor: pointer;
 }
 
 .flickity-button:focus {
   outline: none;
-  box-shadow: 0 0 0 5px #19F;
+  box-shadow: 0 0 0 5px #47a3d0;
 }
 
 .flickity-button:active {
@@ -127,7 +131,7 @@ https://flickity.metafizzy.co
   width: 10px;
   height: 10px;
   margin: 0 8px;
-  background: #292324;
+  background: #47a3d0;
   border-radius: 50%;
   opacity: 0.25;
   cursor: pointer;
@@ -139,11 +143,10 @@ https://flickity.metafizzy.co
 
 /* fullscreen one image in viewport */
 .carousel-cell {
-  border-radius: 15px;
   padding: 20px 0;
   width: 100%; /* full width */
   height: 400px;
-  background: #222;
+  background-color: #292324;
   /* center images in cells with flexbox */
   display: flex;
   align-items: center;
