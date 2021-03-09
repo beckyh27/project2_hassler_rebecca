@@ -257,6 +257,12 @@ figcaption {
   padding-bottom: 12px;
 }
 
+/**** WORK SECTION ****/
+#work {
+  padding: 100px 5% 200px;
+}
+
+/**** FOOTER ****/
 footer {
   text-align: center;
   color: #fcf1e7;
@@ -406,16 +412,5 @@ footer {
 		padding: 10px 0;
 		width: 38%;
   }
-
-
-
 }
     /************************************* END 850PX MEDIA QUERY *************************************/
-    /************************************* START 1000PX MEDIA QUERY *************************************/
-@media (min-width: 1000px) {
-
-  /* .about-pic {
-    min-width: 315px; */
-  }
-}
-    /************************************* END 1000PX MEDIA QUERY *************************************/
