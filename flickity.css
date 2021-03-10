@@ -159,10 +159,11 @@ https://flickity.metafizzy.co
 
 .carousel-cell img {
   display: block;
-  max-height: 100%;
+  max-height: 450px;
+  padding: 0 10px;
   max-width: 100%;
 }
 
-.nature-cell img {
+/* .nature-cell img {
   max-height: 405px;
-}
+} */

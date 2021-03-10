@@ -1,175 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+	<head>
 
-	<meta charset="utf-8">
+		<meta charset="utf-8">
 
-	<title>Becky Hassler's Portfolio</title>
-	<!-- Stylesheet -->
-	<link type="text/css" rel="stylesheet" href="styles.css" />
-	<link type="text/css" rel="stylesheet" href="flickity.css" />
+		<title>Becky Hassler's Portfolio</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Stylesheets -->
+		<link type="text/css" rel="stylesheet" href="styles.css" />
+		<link type="text/css" rel="stylesheet" href="flickity.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.fancybox.css">
 
-	<!--Adobe Font-->
-	<link rel="stylesheet" href="https://use.typekit.net/txh3wkz.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--Adobe Font-->
+		<link rel="stylesheet" href="https://use.typekit.net/txh3wkz.css">
 
 
-	<!--Google Fonts-->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
+		<!--Google Fonts-->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
 
-	<!-- FAVIcon -->
-	<link rel="shortcut icon" href="images/favicon.ico" type="img/ico">
+		<!-- FAVIcon -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="img/ico">
 
-	<!--[if lt IE 9]>
-			<script src="js/html5shiv-printshiv.min.js"></script>
-		<![endif]-->
+		<!--[if lt IE 9]>
+				<script src="js/html5shiv-printshiv.min.js"></script>
+			<![endif]-->
 
-	<!--Scripts-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+	</head>
 
-<body class="site">
+	<body class="site">
 
-		<header>
-			<a href="#home"><img src="images/home-logo.png" alt="Home Icon" title="Home Icon"></a>
+			<header>
+				<a href="#home"><img src="images/home-logo.png" alt="Home Icon" title="Home Icon"></a>
 
-			<div class="bg-cover"></div>
-			<div role="button" class="hamburger-shell" aria-expanded="false">
-				<div class="top"></div>
-				<div class="middle"></div>
-			</div>
-
-			<nav class="menu" id="menu">
-				<ul>
-					<li class="mobile-link"><a href="#home">Home</a></li>
-					<li class="mobile-link"><a href="#about">About</a></li>
-					<li class="mobile-link"><a href="#work">Work</a></li>
-					<li class="mobile-link"><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-
-			<nav class="desktop-nav">
-				<ul>
-					<li class="link"><a href="#home">Home</a></li>
-					<li class="link"><a href="#about">About</a></li>
-					<li class="link"><a href="#work">Work</a></li>
-					<li class="link"><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-
-		<main class="container site-content">
-
-			<!--Home Section-->
-
-			<section id="home">
-
-				<h1>I'm Becky,</h1>
-				<h2>a designer.</h2>
-
-				<div class="home-image-flex">
-					<img class="home-shapes-mobile" src="images/home-shapes-mobile.png" alt="Decorative Shapes" title="Decorative Shapes">
-					<img class="home-shapes" src="images/home-shapes.png" alt="Decorative Shapes" title="Decorative Shapes">
+				<div class="bg-cover"></div>
+				<div role="button" class="hamburger-shell" aria-expanded="false">
+					<div class="top"></div>
+					<div class="middle"></div>
 				</div>
-			</section>
 
-			<!--About Section-->
+				<nav class="menu" id="menu">
+					<ul>
+						<li class="mobile-link"><a href="#home">Home</a></li>
+						<li class="mobile-link"><a href="#about">About</a></li>
+						<li class="mobile-link"><a href="#work">Work</a></li>
+						<li class="mobile-link"><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
 
-			<section id="about">
+				<nav class="desktop-nav">
+					<ul>
+						<li class="link"><a href="#home">Home</a></li>
+						<li class="link"><a href="#about">About</a></li>
+						<li class="link"><a href="#work">Work</a></li>
+						<li class="link"><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
 
-					<figure class="about-flex-image">
-						<img class="about-pic" src="images/about-pic.png" alt="Illustration of Becky Hassler" title="Illustration of Becky Hassler">
-						<figcaption>Illustration by Becky Hassler</figcaption>
-					</figure>
+			<main class="container site-content">
 
-					<aside class="about-flex-text">
+				<!--Home Section-->
 
-							<h3>Hi there! I’m Becky, a graduate web design student living in the Hudson Valley.</h3>
+				<section id="home">
 
-							<img class="pink-lines" src="images/pink-lines.png" alt="Decorative Pink Lines" title="Decorative Pink Lines">
+					<h1>I'm Becky,</h1>
+					<h2>a designer.</h2>
+
+					<div class="home-image-flex">
+						<img class="home-shapes-mobile" src="images/home-shapes-mobile.png" alt="Decorative Shapes" title="Decorative Shapes">
+						<img class="home-shapes" src="images/home-shapes.png" alt="Decorative Shapes" title="Decorative Shapes">
+					</div>
+				</section>
+
+				<!--About Section-->
+
+				<section id="about">
+						<h4>About Me</h4>
+						<div class="about-flex">
+							<figure class="about-flex-image">
+								<img class="about-pic" src="images/about-pic.png" alt="Illustration of Becky Hassler" title="Illustration of Becky Hassler">
+								<figcaption>Illustration by Becky Hassler</figcaption>
+							</figure>
+
+							<aside class="about-flex-text">
+
+									<h3>Hi there! I’m Becky, a graduate web design student living in the Hudson Valley.</h3>
+
+									<img class="pink-lines" src="images/pink-lines.png" alt="Decorative Pink Lines" title="Decorative Pink Lines">
 
 
-							<p>I am in the process of completing my masters in web design at the University of Florida. Through this program, I am gaining skills in coding in HTML , CSS, and Javascript. I am also learning Adobe Photoshop, InDesign, and
-								Illustrator.
-							</p>
+									<p>I am in the process of completing my masters in web design at the University of Florida. Through this program, I am gaining skills in coding in HTML , CSS, and Javascript. I am also learning Adobe Photoshop, InDesign, and
+										Illustrator.
+									</p>
 
-							<p>I am passionate about making designs that prioritize accessibility, responsiveness, and a positive user experience.
-							</p>
+									<p>I am passionate about making designs that prioritize accessibility, responsiveness, and a positive user experience.
+									</p>
 
-							<p>Outside of school, you’ll find me pacticing yoga, jamming to lo-fi music, and nerding out about everything sci fi and fantasy.
-							</p>
+									<p>Outside of school, you’ll find me pacticing yoga, jamming to lo-fi music, and nerding out about everything sci fi and fantasy.
+									</p>
 
-					</aside>
+							</aside>
+						</div>
+				</section>
 
-			</section>
+				<section id="work">
+					<h4>My Work</h4>
+					<!-- <img src="images/yellow-lines.png" alt="Decorative Yellow Lines" title="Decorative Yellow Lines"> -->
+					<!-- Flickity HTML init -->
+					<div class="work-container">
 
-			<section id="work">
-				<h4>My Work</h4>
-				<!-- <img src="images/yellow-lines.png" alt="Decorative Yellow Lines" title="Decorative Yellow Lines"> -->
-				<!-- Flickity HTML init -->
-				<div class="work-container">
+						<div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1 }'>
 
-					<div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1 }'>
+								<div class="carousel-cell">
+									<a target="_blank" href="images/nature-conservancy-project.pdf">
+										<img class="carousel-image"
+										data-flickity-lazyload="images/nature-conservancy-project.jpg">
+									</a>
+								</div>
 
-							<div class="carousel-cell nature-cell">
-								<a target="_blank" href="images/nature-conservancy-project.pdf">
-									<img class="carousel-image"
-									data-flickity-lazyload="images/nature-conservancy-project.jpg" />
-								</a>
-							</div>
+							  <div class="carousel-cell">
+									<a href="images/ebook-project.jpg" data-fancybox="gallery" data-caption="This is an eBook cover for The Perks of Being a Wallflower by Stephen Chbosky.">
+								    <img class="carousel-image"
+								      data-flickity-lazyload="images/ebook-project.jpg">
+									</a>
+								</div>
 
-						  <div class="carousel-cell">
-						    <img class="carousel-image"
-						      data-flickity-lazyload="images/ebook-project.jpg" />
-							</div>
+								<div class="carousel-cell">
+									<a href="images/desktop-project.png" data-fancybox="gallery" data-caption="This is the desktop website redesign for the makeup brand Shared Planet.">
+								    <img class="carousel-image"
+								      data-flickity-lazyload="images/desktop-project.png">
+									</a>
+								</div>
 
-							<div class="carousel-cell">
-						    <img class="carousel-image"
-						      data-flickity-lazyload="images/makeup-site-redesign.png" />
-							</div>
+								<div class="carousel-cell">
+									<a href="images/mobile-project.png" data-fancybox="gallery" data-caption="This is the desktop website redesign for the makeup brand Shared Planet.">
+								    <img class="carousel-image"
+								      data-flickity-lazyload="images/mobile-project.png">
+									</a>
+								</div>
 
-							<div class="carousel-cell">
-						    <img class="carousel-image"
-						      data-flickity-lazyload="images/facebook-project.gif" />
-							</div>
+								<div class="carousel-cell">
+									<a href="images/facebook-project.gif" data-fancybox="gallery" data-caption="This is an ad designed for Facebook for travel brand Travel Vida.">
+							    	<img class="carousel-image"
+							      data-flickity-lazyload="images/facebook-project.gif">
+									</a>
+								</div>
 
-							<div class="carousel-cell">
-						    <img class="carousel-image"
-						      data-flickity-lazyload="images/instagram-project.jpg" />
-							</div>
+								<div class="carousel-cell">
+									<a href="images/instagram-project.jpg" data-fancybox="gallery" data-caption="This is an ad designed for Instagram for travel brand Travel Vida.">
+								    <img class="carousel-image"
+								      data-flickity-lazyload="images/instagram-project.jpg">
+										</a>
+								</div>
 
-							<div class="carousel-cell">
-						    <img class="carousel-image"
-						      data-flickity-lazyload="images/twitter-project.png" />
-							</div>
+								<div class="carousel-cell">
+									<a href="images/twitter-project.png" data-fancybox="gallery" data-caption="This is an ad designed for Instagram for travel brand Travel Vida.">
+							    	<img class="carousel-image"
+							      data-flickity-lazyload="images/twitter-project.png">
+									</a>
+								</div>
 
-							<div class="carousel-cell">
-						    <img class="carousel-image"
-						      data-flickity-lazyload="images/email-project.jpg" />
+								<div class="carousel-cell">
+									<a href="images/email-project.jpg" data-fancybox="gallery" data-caption="This is an email blast designed for an adoption event for animal shelter Alachua County Humane Society.">
+							    	<img class="carousel-image"
+							      data-flickity-lazyload="images/email-project.jpg">
+									</a>
+								</div>
+
 							</div>
 
 						</div>
 
-					</div>
+				</section>
 
-			</section>
+			</main>
 
-		</main>
+		<footer>
+			<p>Website designed and developed by Becky Hassler.</p>
+			<p>Copyright 2021</p>
+		</footer>
+		<!-- Hamburger Menu -->
+		<script type="text/javascript" src="js/hamburger.js"></script>
 
-	<footer>
-		<p>Website designed and developed by Becky Hassler.</p>
-		<p>Copyright 2021</p>
-	</footer>
+		<!-- Smooth Scroll -->
+		<script type="text/javascript" src="js/script.js"></script>
 
-	<script type="text/javascript" src="js/hamburger.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
-	<script type="text/javascript" src="js/flickity.pkgd.js"></script>
-	<!-- slider js -->
+		<!-- Slider -->
+		<script type="text/javascript" src="js/flickity.pkgd.js"></script>
 
+		<!-- FancyBox JS -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="js/jquery.fancybox.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-</body>
+	</body>
 
 </html>

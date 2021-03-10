@@ -33,6 +33,15 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
 /* Montserrat Light
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300; */
+
+/* pink #f6ad9b
+cream #fcf1e7
+dark gray #292324
+red #f04c1f
+medium blue #47a3d0 */
+
+
+
 body {
   background-color: #fcf1e7;
   font-family: 'Montserrat', sans-serif;
@@ -227,6 +236,17 @@ header img {
   margin: 0 auto;
 }
 
+h4 {
+  font-family: kansasnew, serif;
+  font-weight: 600;
+  font-style: normal;
+  padding: 10px 0;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+  display: inline-block;
+  border-bottom: 10px solid rgba(240, 179, 42, .7);
+}
+
 .about-pic {
   width: 100%;
   max-width: 430px;
@@ -262,21 +282,14 @@ figcaption {
   padding: 100px 5% 200px;
 }
 
-#work h4 {
-  font-family: kansasnew, serif;
-  font-weight: 600;
-  font-style: normal;
-  padding: 10px 0;
-  margin-bottom: 40px;
-  font-size: 1.8rem;
-  display: inline-block;
-  border-bottom: 10px solid rgba(240, 179, 42, .7);
-}
-
 .work-container {
   padding: 20px 20px 60px;
   background-color: #292324;
   border-radius: 15px;
+}
+
+.carousel-cell span {
+  font-style: italic;
 }
 
 /**** FOOTER ****/
@@ -314,7 +327,7 @@ footer p {
   }
 
   /**** ABOUT SECTION ****/
-  #about h3, #work h4 {
+  #about h3, h4 {
     font-size: 2.2rem;
   }
 
@@ -410,6 +423,9 @@ footer p {
     /**** ABOUT SECTION ****/
   #about {
     max-width: none;
+  }
+
+  .about-flex {
     display: flex;
   }
 
@@ -430,7 +446,7 @@ footer p {
   }
 
   .pink-lines {
-		padding: 10px 0;
+		padding: 20px 0;
 		width: 38%;
   }
 }
