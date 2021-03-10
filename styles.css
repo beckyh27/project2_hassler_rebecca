@@ -222,7 +222,7 @@ header img {
 
 /**** ABOUT SECTION ****/
 #about {
-	padding: 100px 5%;
+	padding: 100px 5% 50px;
   max-width: 550px;
   margin: 0 auto;
 }

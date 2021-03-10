@@ -162,3 +162,7 @@ https://flickity.metafizzy.co
   max-height: 100%;
   max-width: 100%;
 }
+
+.nature-cell img {
+  max-height: 405px;
+}
