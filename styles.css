@@ -18,8 +18,8 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
 .site-content {
   flex: 1;
 }
-/************************* STICKY FOOTER  *************************/
 
+/************************* STICKY FOOTER  *************************/
 /* Kansasnew SemiBold
 		font-family: kansasnew, serif;
 		font-weight: 600;
@@ -33,15 +33,11 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
 /* Montserrat Light
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300; */
-
 /* pink #f6ad9b
 cream #fcf1e7
 dark gray #292324
 red #f04c1f
 medium blue #47a3d0 */
-
-
-
 body {
   background-color: #fcf1e7;
   font-family: 'Montserrat', sans-serif;
@@ -135,6 +131,7 @@ header img {
   width: 200px;
   text-align: right;
 }
+
 /***************************** NAV UNDERLINE EFFECT *****************************/
 .mobile-link {
   list-style-type: none;
@@ -172,8 +169,8 @@ header img {
   visibility: visible;
   transform: scaleX(1);
 }
-/***************************** NAV UNDERLINE EFFECT *****************************/
 
+/***************************** NAV UNDERLINE EFFECT *****************************/
 .menu-open .top {
   transform: rotate(225deg);
   -webkit-transform: rotate(225deg);
@@ -193,7 +190,6 @@ header img {
 }
 
 /*************************** HAMBURGER MENU STYLES *******************************/
-
 /**** HOME SECTION ****/
 #home {
   height: 650px;
@@ -231,9 +227,7 @@ header img {
 
 /**** ABOUT SECTION ****/
 #about {
-	padding: 100px 5% 50px;
-  /* max-width: 550px; */
-  margin: 0 auto;
+  padding: 100px 5% 50px;
 }
 
 h4 {
@@ -274,12 +268,13 @@ figcaption {
 }
 
 #about p {
+  font-size: 1rem;
   padding-bottom: 12px;
 }
 
 /**** WORK SECTION ****/
 #work {
-  padding: 100px 5% 200px;
+  padding: 100px 5%;
 }
 
 .work-container {
@@ -288,6 +283,87 @@ figcaption {
   border-radius: 15px;
 }
 
+/**** CONTACT SECTION ****/
+#contact {
+  padding: 100px 5% 100px;
+  color: #292324;
+  margin: 0 auto;
+}
+
+#contact h3 {
+  font-family: kansasnew, serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.8rem;
+  }
+
+#contact p {
+  font-size: 1rem;
+  padding: 20px 0;
+}
+
+#contact img {
+  width: 100%
+}
+
+.contact-form {
+  border-radius: 5px;
+  color: #292324;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.label_input_wrap {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-section {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-section input {
+  padding: 5px 0;
+  border-radius: 4px;
+  height: 35px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+textarea {
+  border-radius: 4px;
+  padding: 10px 0;
+  width: 100%;
+  height: 140px;
+}
+
+label {
+  font-weight: 600;
+}
+
+.submit {
+  text-align: center;
+}
+
+.submit input {
+  background-color: #f04c1f;
+  opacity: .8;
+  color: white;
+  padding: 9px 24px;
+  border-radius: 5px;
+  font-size: 18px;
+  letter-spacing: .05rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  width: 80%;
+  height: 45px;
+  margin: 0 auto;
+}
+
+.submit input:hover {
+  opacity: 1;
+}
 /**** FOOTER ****/
 footer {
   text-align: center;
@@ -322,37 +398,50 @@ footer p {
     max-width: 635px;
   }
 
-  /**** ABOUT SECTION ****/
-  #about h3, h4 {
+  /**** ABOUT, WORK, CONTACT SECTIONS ****/
+  h3, h4 {
     font-size: 2.2rem;
   }
 
-  #about p {
+  p {
     line-height: 1.3rem;
     font-size: 1rem;
   }
 }
-  /************************************* END 380PX MEDIA QUERY *************************************/
 
-  /************************************* START 720PX MEDIA QUERY *************************************/
+/************************************* END 380PX MEDIA QUERY *************************************/
+/************************************* START 500PX MEDIA QUERY *************************************/
+@media (min-width: 500px) {
+  #contact img {
+    width: 57%;
+    min-width: 400px;
+    max-width: 635px;
+  }
+}
+/************************************* END 500PX MEDIA QUERY *************************************/
+/************************************* START 720PX MEDIA QUERY *************************************/
 @media (min-width: 720px) {
-
 
   /**** HOME SECTION ****/
   #home h1, #home h2 {
     font-size: 3.2rem;
   }
+
+/**** CONTACT SECTION ****/
+  .contact-content-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-    /************************************* END 720PX MEDIA QUERY *************************************/
-    /************************************* START 850PX MEDIA QUERY *************************************/
+/************************************* END 720PX MEDIA QUERY *************************************/
+/************************************* START 850PX MEDIA QUERY *************************************/
 @media (min-width: 850px) {
-
   .container {
     max-width: 1000px;
     margin: 0 auto;
-    }
-
+  }
 
   /* DESKTOP-NAV STYLES START*/
   .hamburger-shell {
@@ -375,8 +464,9 @@ footer p {
     color: #292324;
     text-decoration: none;
     font-weight: 400;
-    }
-/***************************** NAV UNDERLINE EFFECT *****************************/
+  }
+
+  /***************************** NAV UNDERLINE EFFECT *****************************/
   .link>a {
     position: relative;
     color: #292324;
@@ -405,18 +495,18 @@ footer p {
     visibility: visible;
     transform: scaleX(1);
   }
-/***************************** NAV UNDERLINE EFFECT *****************************/
-  /* DESKTOP-NAV STYLES END*/
 
+  /***************************** NAV UNDERLINE EFFECT *****************************/
+  /* DESKTOP-NAV STYLES END*/
   .hamburger-shell {
     display: none;
   }
 
   #home {
-      padding-top: 77px;
-      }
+    padding-top: 77px;
+  }
 
-    /**** ABOUT SECTION ****/
+  /**** ABOUT SECTION ****/
   #about {
     max-width: none;
   }
@@ -435,15 +525,29 @@ footer p {
   }
 
   .about-pic {
-    min-width: 315px; */
+    min-width: 315px;
+    */
   }
+
   #about h3 {
     padding: 0;
   }
 
   .pink-lines {
-		padding: 20px 0;
-		width: 38%;
+    padding: 20px 0;
+    width: 38%;
   }
+
+  /**** CONTACT SECTION ****/
+
+  .contact-flex {
+    display: flex;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-    /************************************* END 850PX MEDIA QUERY *************************************/
+
+/************************************* END 850PX MEDIA QUERY *************************************/
