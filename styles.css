@@ -232,7 +232,7 @@ header img {
 /**** ABOUT SECTION ****/
 #about {
 	padding: 100px 5% 50px;
-  max-width: 550px;
+  /* max-width: 550px; */
   margin: 0 auto;
 }
 
@@ -286,10 +286,6 @@ figcaption {
   padding: 20px 20px 60px;
   background-color: #292324;
   border-radius: 15px;
-}
-
-.carousel-cell span {
-  font-style: italic;
 }
 
 /**** FOOTER ****/

@@ -143,27 +143,21 @@ https://flickity.metafizzy.co
 
 /* fullscreen one image in viewport */
 .carousel-cell {
-  padding: 20px 0;
+  padding: 15px 0 30px;
   width: 100%; /* full width */
-  height: 400px;
   background-color: #292324;
+}
+
+.carousel-cell a {
   /* center images in cells with flexbox */
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.carousel.is-fullscreen .carousel-cell {
-  height: 100%;
+  height: 400px;
 }
 
 .carousel-cell img {
   display: block;
-  max-height: 450px;
-  padding: 0 10px;
-  max-width: 100%;
+  max-width: 95%;
+  max-height: 100%;
 }
-
-/* .nature-cell img {
-  max-height: 405px;
-} */
