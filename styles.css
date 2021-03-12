@@ -50,17 +50,26 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   position: fixed;
   z-index: 99;
   background-color: #fcf1e7;
-  height: 80px;
+  height: 90px;
   width: 100%;
 }
 
 header img {
-  width: 80px;
+  width: 75px;
   padding: 10px 0 0 10px;
-  max-width: 83px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+h5 {
+  display: none;
 }
 
 .desktop-nav {
@@ -301,22 +310,25 @@ figcaption {
   padding-bottom: 10px;
   }
 
-.contact-pink-lines {
+.contact-shapes {
   display: none;
+}
+
+.contact-shapes-line {
+  width: 90%;
+}
+
+.contact-content-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #contact p {
   font-size: 1rem;
   padding-bottom: 20px;
   text-align: center;
-}
-
-.contact-shapes {
-  width: 100%
-}
-
-.contact-shapes-alternate {
-  display: none;
 }
 
 .contact-form {
@@ -362,6 +374,7 @@ label {
 }
 
 .submit input {
+  cursor: pointer;
   background-color: #f04c1f;
   opacity: .8;
   color: white;
@@ -371,8 +384,8 @@ label {
   letter-spacing: .05rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  width: 80%;
-  height: 45px;
+  width: 250px;
+  height: 55px;
   margin: 0 auto;
 }
 
@@ -392,7 +405,7 @@ footer {
 }
 
 footer p {
-  padding: 10px 0;
+  padding: 10px 15px;
 }
 
 /************************************* START 380PX MEDIA QUERY *************************************/
@@ -407,7 +420,7 @@ footer p {
     display: block;
     position: absolute;
     z-index: -10;
-    padding-bottom: 140px;
+    padding-bottom: 125px;
     width: 57%;
     min-width: 400px;
     max-width: 635px;
@@ -427,17 +440,39 @@ footer p {
 /************************************* END 380PX MEDIA QUERY *************************************/
 /************************************* START 500PX MEDIA QUERY *************************************/
 @media (min-width: 500px) {
+  /**** HEADER ****/
 
-  /**** CONTACT SECTION ****/
-  .contact-content-flex {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  h5 {
+    display: inline-block;
+    font-family: kansasnew, serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.2rem;
+    padding-left: 5px;
+    color: #292324;
   }
 
-  .contact-copy {
-    flex: 3;
+  .logo a {
+    text-decoration: none;
+  }
+
+  /**** CONTACT SECTION ****/
+  .form-flex-top, .form-flex-bottom {
+    display: flex;
+    align-content: space-around;
+  }
+
+  .input-section {
+    display: block;
+    width: 100%;
+  }
+
+  .first-name, .email {
+    padding-right: 15px;
+  }
+
+  .last-name, .telephone {
+    padding-left: 15px;
   }
 
   #contact h3 {
@@ -455,21 +490,16 @@ footer p {
     font-size: 1.1rem;
   }
 
-  .contact-shapes {
-    display: none;
-    width: 50%;
-  }
-
 }
 /************************************* END 500PX MEDIA QUERY *************************************/
 /************************************* START 650PX MEDIA QUERY *************************************/
 @media (min-width: 650px) {
   /**** CONTACT SECTION ****/
-  form {
+  /* form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
+  } */
 }
 /************************************* END 650PX MEDIA QUERY *************************************/
 /************************************* START 720PX MEDIA QUERY *************************************/
@@ -577,6 +607,7 @@ footer p {
 
   #about h3 {
     padding: 0;
+    font-size: 2rem;
   }
 
   .pink-lines {
@@ -593,21 +624,29 @@ footer p {
 
   .contact-content-flex {
     flex: 1;
-    padding-right: 20px;
+    padding-right: 24px;
     padding-top: 27px;
   }
 
   #contact h3 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 
-  .contact-pink-lines {
-    width: 215px;
-    padding: 15px 0;
+  #contact p {
+    padding-top: 5px;
+  }
+
+  .contact-shapes-line {
+    width: 70%;
+    display: none;
+  }
+
+  .contact-shapes {
     display: block;
+    width: 90%;
   }
 
-  form {
+  .contact-form {
     flex: 1;
   }
 
@@ -616,3 +655,9 @@ footer p {
   }
 
 /************************************* END 850PX MEDIA QUERY *************************************/
+/************************************* START 1000PX MEDIA QUERY ************************************/
+@media (min-width: 1000px) {
+  #contact h3 {
+    font-size: 2.7rem;
+}
+/************************************* END 1000PX MEDIA QUERY *************************************/

@@ -34,7 +34,10 @@
 <body class="site">
 
 	<header>
-		<a href="#home"><img src="images/home-logo.png" alt="Home Icon" title="Home Icon"></a>
+		<div class="logo">
+			<a href="#home"><img src="images/home-logo.png" alt="Home Icon" title="Home Icon"></a>
+			<a href="#home"><h5>Becky Hassler</h5></a>
+		</div>
 
 		<div class="bg-cover"></div>
 		<div role="button" class="hamburger-shell" aria-expanded="false">
@@ -88,7 +91,7 @@
 
 				<aside class="about-flex-text">
 
-					<h3>Hi there! I’m Becky, a graduate web design student living in the Hudson Valley.</h3>
+					<h3>Hi there! I’m Becky Hassler, a graduate web design student living in the Hudson Valley.</h3>
 
 					<img class="pink-lines" src="images/pink-lines.png" alt="Decorative Pink Lines" title="Decorative Pink Lines">
 
@@ -172,20 +175,17 @@
 			<div class="contact-flex">
 
 				<aside class="contact-content-flex">
-					<div class="contact-copy">
-						<h3>Let's work together!</h3>
-						<img class="contact-pink-lines" src="images/pink-lines.png" alt="Decorative Pink Lines" title="Decorative Pink Lines">
-
-						<p>Do you have an exciting project you would like to colaborate on? Let's chat! Send me a message and I'll get back to you in a jif!
-						</p>
-					</div>
-
-					<!-- <img class="contact-shapes" src="images/contact-shapes.png" alt="Decorative Colorful Shapes" title="Decorative Colorful Shapes"> -->
-					<!-- <img class="contact-shapes-alternate" src="images/contact-shapes-alternate.png" alt="Decorative Colorful Shapes" title="Decorative Colorful Shapes"> -->
-
+					<h3>Let's work together!</h3>
+					<p>Do you have an exciting project you would like to colaborate on? Let's chat! Send me a message and I'll get back to you in a jif!
+					</p>
+					<img class="contact-shapes-line" src="images/contact-shapes-line.png" alt="Decorative, Colorful Shapes" title="Decorative, Colorful Shapes">
+					<img class="contact-shapes" src="images/contact-shapes.png" alt="Decorative, Colorful Shapes" title="Decorative, Colorful Shapes">
 				</aside>
+
+
 				<form class="contact-form" id="test_form" name="test_form" method="post" action="form.php" onsubmit="return validateForm(this)">
 
+					<div class="form-flex-top">
 						<div class="first-name input-section">
 							<label for="firstname" class="label_input_wrap">First Name</label>
 							<input type="text" name="firstname" id="firstname">
@@ -195,15 +195,19 @@
 							<label for="lastname" class="label_input_wrap">Last Name</label>
 							<input type="text" name="lastname" id="lastname">
 						</div>
-
-					<div class="email input-section">
-						<label for="email" class="label_input_wrap">Email</label>
-						<input type="email" name="req_email" id="email">
 					</div>
 
-					<div class="telephone input-section">
-						<label for="telephone" class="label_input_wrap">Telephone</label>
-						<input type="tel" name="telephone" id="telephone">
+
+					<div class="form-flex-bottom">
+						<div class="email input-section">
+							<label for="email" class="label_input_wrap">Email</label>
+							<input type="email" name="req_email" id="email">
+						</div>
+
+						<div class="telephone input-section">
+							<label for="telephone" class="label_input_wrap">Telephone</label>
+							<input type="tel" name="telephone" id="telephone">
+						</div>
 					</div>
 
 					<div class="message input-section">
@@ -222,7 +226,7 @@
 	</main>
 
 	<footer>
-		<p>Website designed and developed by Becky Hassler.</p>
+		<p>This website was designed and developed by Becky Hassler.</p>
 		<p>Copyright 2021</p>
 	</footer>
 
