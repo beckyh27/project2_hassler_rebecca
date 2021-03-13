@@ -54,8 +54,9 @@ header {
   position: fixed;
   z-index: 99;
   background-color: #fcf1e7;
-  height: 90px;
+  height: 80px;
   width: 100%;
+  box-shadow: 0px 6px 1px -1px rgb(0 0 0 / 3%)
 }
 
 header img {
@@ -202,14 +203,22 @@ h5 {
 
 /*************************** HAMBURGER MENU STYLES *******************************/
 /**** HOME SECTION ****/
-#home {
+/* #home {
   height: 650px;
+} */
+
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.home-image-flex {
+.home-container {
+  width: 100%;
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 #home h1 {
@@ -228,8 +237,18 @@ h5 {
 .home-shapes-mobile {
   width: 100%;
   max-width: 757px;
-  position: absolute;
   z-index: -10;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.home-text {
+  position: absolute;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  top: 10%;
 }
 
 .home-shapes {
@@ -381,7 +400,7 @@ label {
 }
 
 .submit {
-  padding-top: 20px;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -432,12 +451,11 @@ footer p {
 
   .home-shapes {
     display: block;
-    position: absolute;
     z-index: -10;
-    padding-bottom: 125px;
-    width: 57%;
+    width: 90%;
     min-width: 400px;
     max-width: 635px;
+    margin: 0 auto;
   }
 
   /**** ABOUT, WORK, CONTACT SECTIONS ****/
@@ -577,10 +595,6 @@ footer p {
 
   /***************************** NAV UNDERLINE EFFECT *****************************/
   /* DESKTOP-NAV STYLES END*/
-
-  #home {
-    padding-top: 77px;
-  }
 
   /**** ABOUT SECTION ****/
   #about {

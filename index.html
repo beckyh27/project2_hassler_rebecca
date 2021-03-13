@@ -25,9 +25,19 @@
 	<!-- FAVIcon -->
 	<link rel="shortcut icon" href="images/favicon.ico" type="img/ico">
 
+	<script src="js/parallax.js"></script>
+
 	<!--[if lt IE 9]>
 				<script src="js/html5shiv-printshiv.min.js"></script>
 			<![endif]-->
+
+			<script type="text/javascript">
+				$('.paralax-background').parallaxBackground({
+				event: 'mouse_move',
+				animation_type: 'shift',
+				animate_duration: 2
+				});
+			</script>
 
 </head>
 
@@ -69,14 +79,27 @@
 		<!--Home Section-->
 
 		<section id="home">
+			<div class="home-container" id="home-container">
 
-			<h1>I'm Becky,</h1>
-			<h2>a designer.</h2>
+				<div id="scene" data-hover-only="true" data-relative-input="true" class="scene border">
 
-			<div class="home-image-flex">
+					<div data-depth=".1">
+						<img class="home-shapes" src="images/home-shapes.png" alt="Decorative Shapes" title="Decorative Shapes">
+					</div>
+				</div>
+
+				<div class="home-text" data-depth="1">
+					<h1>I'm Becky,</h1>
+					<h2>a designer.</h2>
+				</div>
 				<img class="home-shapes-mobile" src="images/home-shapes-mobile.png" alt="Decorative Shapes" title="Decorative Shapes">
-				<img class="home-shapes" src="images/home-shapes.png" alt="Decorative Shapes" title="Decorative Shapes">
+
 			</div>
+
+			<!-- <div class="home-image-flex"> -->
+				<!-- <img class="home-shapes-mobile" src="images/home-shapes-mobile.png" alt="Decorative Shapes" title="Decorative Shapes"> -->
+				<!-- <img class="home-shapes" src="images/home-shapes.png" alt="Decorative Shapes" title="Decorative Shapes">
+			</div> -->
 		</section>
 
 		<!--About Section-->
@@ -243,6 +266,16 @@
 
 	<!-- Hamburger Menu -->
 	<script type="text/javascript" src="js/hamburger.js"></script>
+
+	<!-- Interactive Moving Background -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+	<script src="js/parallax.js"></script>
+	<script>
+
+	var scene = document.getElementById('scene');
+	var parallax = new Parallax(scene);
+
+	</script>
 </body>
 
 </html>
