@@ -1,196 +1,68 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html lang="en" dir="ltr">
+<head>
 
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNFDGEZCKX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+	<meta charset="utf-8">
 
-      gtag('config', 'G-VNFDGEZCKX');
-    </script>
+	<title>Becky Hassler's Portfolio</title>
 
-    <meta name="keywords" content="portfolio website web design becky hassler">
-    <meta name="description" content="See the web and graphic design portfolio of Becky Hassler.">
+	<!-- Stylesheets -->
+	<link type="text/css" rel="stylesheet" href="/styles.css" />
+	<link type="text/css" rel="stylesheet" href="/flickity.css" />
+	<link rel="stylesheet" type="text/css" href="/jquery.fancybox.css">
 
-    <meta charset="utf-8">
-    <title>Becky Hassler Design Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Stylesheet -->
-    <link href="lightbox/css/lightbox.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/slick.css">
-    <link rel="stylesheet" href="../css/slick-theme.css">
-    <link rel="stylesheet" href="../css/styles.css">
+	<!--Adobe Font-->
+	<link rel="stylesheet" href="https://use.typekit.net/txh3wkz.css">
 
-    <!--Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/scripts.js" type="text/javascript"></script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+	<!--Google Fonts-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
 
-    <!-- FAVIcon -->
-    <link rel="shortcut icon" href="../p3-hassler-rebecca/images/favicon.ico" type="img/ico">
+	<!-- FAVIcon -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="img/ico">
 
-    <!--FontAwesome-->
-    <script src="https://kit.fontawesome.com/1c337c1bea.js" crossorigin="anonymous"></script>
+	<!--[if lt IE 9]>
+				<script src="js/html5shiv-printshiv.min.js"></script>
+			<![endif]-->
 
-  </head>
+</head>
 
-  <body>
-    <style type="text/css">
-      /*========================================================
-    *
-    *
-    *                      Universal Styling
-    *
-    *
-    ===========================================================*/
-      * {
-        margin: 0;
-        padding: 0;
-        border: 0;
-      }
+<body class="site">
 
-      body {
-        background-image: linear-gradient(#0051e5, #02aee0);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        overflow-x: hidden;
-        color: #fbfbfb;
-      }
+	<header>
+		<div class="logo">
+			<a href="#home"><img src="images/home-logo.png" alt="Home Icon" title="Home Icon"></a>
+			<a href="#home"><h5>Becky Hassler</h5></a>
+		</div>
 
-      /*========================================================
-      *
-      *
-      *                      Header
-      *
-      *
-      ===========================================================*/
-      header {
-        position: fixed;
-        text-align: right;
-        left: 0;
-        right: 0;
-        margin: 40px 20px 0;
-        z-index: 99;
-      }
+		<div class="bg-cover"></div>
+		<div role="button" class="hamburger-shell" aria-expanded="false">
+			<div class="top"></div>
+			<div class="middle"></div>
+		</div>
 
-      header nav ul li {
-        display: inline;
-        text-align: right;
-        padding: 12px 0 7px;
-        border-radius: 4px;
-        transition: 1s ease-in-out;
-      }
+		<nav class="menu" id="menu">
+			<ul>
+				<li class="mobile-link"><a href="#home">Home</a></li>
+				<li class="mobile-link"><a href="#about">About</a></li>
+				<li class="mobile-link"><a href="#work">Work</a></li>
+				<li class="mobile-link"><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
 
-      header nav ul li:hover {
-        background-image: linear-gradient(#f77c2a, #fad126);
-        transition: 1s ease-in-out;
-      }
-
-      header nav a {
-        text-decoration: none;
-        color: #fbfbfb;
-        font-family: 'Montserrat', sans-serif;
-        letter-spacing: .05rem;
-        font-weight: 500;
-        font-size: 20px;
-        margin: 20px 15px 0;
-      }
-
-      .logo {
-        float: left;
-      }
-
-      .logo-div {
-        position: relative;
-        top: -35px;
-        background-image: url('images/logo.png');
-        width: 75px;
-        height: 75px;
-        background-repeat: no-repeat;
-        background-size: 75px 75px;
-        transition: 0.5s ease-in-out;
-      }
-
-      .logo-div:hover {
-        background-image: url('images/reverse-logo.png');
-        transition: 0.5s ease-in-out;
-      }
-      /*========================================================
-      *
-      *
-      *                      Main
-      *
-      *
-      ===========================================================*/
-
-      .container {
-        max-width: 900px;
-        padding: 300px 0px;
-        text-align: center;
-        margin: 0 auto;
-      }
-
-      h1 {
-        font-family: 'Comfortaa', cursive;
-        font-size: 30px;
-        line-height: 1.6rem;
-        letter-spacing: .05rem;
-      }
-
-      .container p {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
-        line-height: 1.6rem;
-        padding-top: 30px;
-      }
-
-      /*========================================================
-      *
-      *
-      *                      Footer
-      *
-      *
-      ===========================================================*/
-      footer {
-        text-align: center;
-        height: 100px;
-      }
-
-      footer p {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 16px;
-        padding: 100px 0 100px;
-      }
-    </style>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- FAVIcon -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="img/ico">
-
-    <!--Header-->
-    <header>
-      <nav>
-        <ul>
-          <li><a href="../index.html#home" class="logo">
-              <div class="logo-div"></div>
-            </a></li>
-          <li><a href="../index.html#about">About</a></li>
-          <li><a href="../index.html#work">Work</a></li>
-          <li><a href="../index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+		<nav class="desktop-nav">
+			<ul>
+				<li class="link"><a href="#home">Home</a></li>
+				<li class="link"><a href="#about">About</a></li>
+				<li class="link"><a href="#work">Work</a></li>
+				<li class="link"><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
 
     <!--Main-->
     <main>
@@ -203,10 +75,23 @@
 
     <!--Footer-->
     <footer>
-      <p>
-        Website by Becky Hassler
-      </p>
+      <p>This website was designed and developed by Becky Hassler.</p>
+      <p>Copyright 2021</p>
     </footer>
 
-  </body>
-</html>
+    <!-- Slider -->
+    <script type="text/javascript" src="js/flickity.pkgd.js"></script>
+
+    <!-- FancyBox JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Smooth Scroll -->
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- Hamburger Menu -->
+    <script type="text/javascript" src="js/hamburger.js"></script>
+    </body>
+
+    </html>

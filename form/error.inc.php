@@ -1,215 +1,460 @@
 <!DOCTYPE html>
-
-<html lang="en" dir="ltr">
+<html lang="en">
 
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNFDGEZCKX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-VNFDGEZCKX');
-    </script>
+  	<meta charset="utf-8">
 
-    <meta name="keywords" content="portfolio website web design becky hassler">
-    <meta name="description" content="See the web and graphic design portfolio of Becky Hassler.">
+  	<title>Becky Hassler's Portfolio</title>
 
-    <meta charset="utf-8">
-    <title>Becky Hassler Design Portfolio</title>
+  	<!-- Stylesheets -->
+  	<link type="text/css" rel="stylesheet" href="/styles.css" />
+  	<link type="text/css" rel="stylesheet" href="/flickity.css" />
+  	<link rel="stylesheet" type="text/css" href="/jquery.fancybox.css">
 
-    <!-- Stylesheet -->
-    <link href="lightbox/css/lightbox.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/slick.css">
-    <link rel="stylesheet" href="../css/slick-theme.css">
-    <link rel="stylesheet" href="../css/styles.css">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/scripts.js" type="text/javascript"></script>
+  	<!--Adobe Font-->
+  	<link rel="stylesheet" href="https://use.typekit.net/txh3wkz.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- FAVIcon -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="img/ico">
+  	<!--Google Fonts-->
+  	<link rel="preconnect" href="https://fonts.gstatic.com">
+  	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
 
-    <!--FontAwesome-->
-    <script src="https://kit.fontawesome.com/1c337c1bea.js" crossorigin="anonymous"></script>
+  	<!-- FAVIcon -->
+  	<link rel="shortcut icon" href="images/favicon.ico" type="img/ico">
+
+  	<!--[if lt IE 9]>
+  				<script src="js/html5shiv-printshiv.min.js"></script>
+  			<![endif]-->
 
   </head>
 
-  <body>
+  <body class="site">
+
     <style type="text/css">
-      /*========================================================
-    *
-    *
-    *                      Universal Styling
-    *
-    *
-    ===========================================================*/
       * {
         margin: 0;
         padding: 0;
         border: 0;
       }
 
+      article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+        display: block;
+      }
+
+      /************************* STICKY FOOTER  *************************/
+      .site {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      .site-content {
+        flex: 1;
+      }
+
+      .container {
+        padding: 0 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      /************************* STICKY FOOTER  *************************/
       body {
-        background-image: linear-gradient(#0051e5, #02aee0);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        overflow-x: hidden;
-        color: #fbfbfb;
-      }
-
-      /*========================================================
-      *
-      *
-      *                      Header
-      *
-      *
-      ===========================================================*/
-      header {
-        position: fixed;
-        text-align: right;
-        left: 0;
-        right: 0;
-        margin: 40px 20px 0;
-        z-index: 99;
-      }
-
-      header nav ul li {
-        display: inline;
-        text-align: right;
-        padding: 12px 0 7px;
-        border-radius: 4px;
-        transition: 1s ease-in-out;
-      }
-
-      header nav ul li:hover {
-        background-image: linear-gradient(#f77c2a, #fad126);
-        transition: 1s ease-in-out;
-      }
-
-      header nav a {
-        text-decoration: none;
-        color: #fbfbfb;
+        background-color: #fcf1e7;
         font-family: 'Montserrat', sans-serif;
-        letter-spacing: .05rem;
-        font-weight: 500;
-        font-size: 20px;
-        margin: 20px 15px 0;
+        font-weight: 300;
+        color: #292324!important;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: fixed;
+        z-index: 99;
+        background-color: #fcf1e7;
+        height: 90px;
+        width: 100%;
+      }
+
+      header img {
+        width: 75px;
+        padding: 10px 0 0 10px;
       }
 
       .logo {
-        float: left;
+        display: flex;
+        align-items: center;
       }
 
-      .logo-div {
-        position: relative;
-        top: -35px;
-        background-image: url('images/logo.png');
-        width: 75px;
+      h5 {
+        display: none;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+
+      /***************************HAMBURGER MENU STYLES*******************************/
+      .bg-cover {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #292324;
+        z-index: 0;
+        transition: all 350ms ease;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .reveal {
+        opacity: .85;
+        display: block;
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .hamburger-shell {
+        margin: 0;
+        position: fixed;
+        overflow: hidden;
+        width: 65px;
         height: 75px;
-        background-repeat: no-repeat;
-        background-size: 75px 75px;
-        transition: 0.5s ease-in-out;
+        overflow: auto;
+        left: calc(100% - 85px);
+        top: 0;
+        cursor: pointer;
+        padding: 0;
+        background: transparent;
+        border: none;
       }
 
-      .logo-div:hover {
-        background-image: url('images/reverse-logo.png');
-        transition: 0.5s ease-in-out;
-      }
-      /*========================================================
-      *
-      *
-      *                      Main
-      *
-      *
-      ===========================================================*/
-
-      .container {
-        max-width: 900px;
-        padding: 300px 0px;
-        text-align: center;
-        margin: 0 auto;
+      .top, .middle {
+        position: absolute;
+        width: 62px;
+        height: 10px;
+        background-color: #f04c1f;
+        opacity: 70%;
+        transition: all 350ms ease-in-out;
+        top: 20px;
       }
 
-      h1 {
-        font-family: 'Comfortaa', cursive;
-        font-size: 30px;
-        line-height: 1.6rem;
-        letter-spacing: .05rem;
+      .middle {
+        top: 40px;
       }
 
-      .container p {
+      #menu {
+        position: fixed;
+        left: calc(100% - 292px);
+        top: 10px;
+        color: #292324;
+        display: none;
+        margin: 120px 5%;
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 1.5rem;
+        color: #fcf1e7;
+        padding: 24px;
+        width: 200px;
+        text-align: right;
+      }
+
+      /***************************** NAV UNDERLINE EFFECT *****************************/
+      .mobile-link {
+        list-style-type: none;
+        padding-top: 40px;
+      }
+
+      .mobile-link a {
+        color: #fcf1e7;
+        font-weight: 400;
+      }
+
+      .mobile-link>a {
+        position: relative;
+        text-decoration: none;
+      }
+
+      .mobile-link>a:hover {
+        transition: all 0.3s ease-in-out 0s;
+      }
+
+      .mobile-link>a::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        bottom: -13px;
+        left: 0;
+        background-color: #f6ad9b;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+      }
+
+      .mobile-link>a:hover::before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+
+      /***************************** NAV UNDERLINE EFFECT *****************************/
+      .menu-open .top {
+        transform: rotate(225deg);
+        -webkit-transform: rotate(225deg);
+        top: 30px;
+        background-color: #f6a894;
+        height: 10px;
+        opacity: 100%;
+      }
+
+      .menu-open .middle {
+        transform: rotate(-225deg);
+        -webkit-transform: rotate(-225deg);
+        top: 30px;
+        background-color: #f6a894;
+        height: 10px;
+        opacity: 100%;
+      }
+
+      /*************************** HAMBURGER MENU STYLES *******************************/
+      /**** MAIN ****/
+
+      ul {
+        padding: 15px 0 15px 21px;
+      }
+
+      main h2 {
+        font-family: kansasnew, serif;
+    		font-weight: 600;
+    		font-style: normal;
+        font-size: 2rem;
+      }
+
+      main p {
+        padding: 20px 0;
         font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
-        line-height: 1.6rem;
-        padding-top: 30px;
+      	font-weight: 300;
+        font-size: 1.1rem;
       }
 
-      /*========================================================
-      *
-      *
-      *                      Footer
-      *
-      *
-      ===========================================================*/
+      /* .missing-fields-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+      } */
+
+      .return-button {
+        padding-top: 20px;
+      }
+
+      .return-button h6 {
+        cursor: pointer!important;
+        background-color: #f04c1f;
+        opacity: .75;
+        color: white!important;
+        padding: 5px 0;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        letter-spacing: .05rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        width: 210px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+      }
+
+       .return-button h6:hover {
+        opacity: 1;
+        transition: .3s;
+      }
+
+      .return-button h6 a {
+      color: white!important;
+      text-decoration: none;
+      }
+      /**** FOOTER ****/
       footer {
         text-align: center;
-        height: 100px;
+        color: #fcf1e7;
+        background-color: #292324;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       footer p {
-        font-size: 16px;
-        padding: 100px 0 100px;
-        font-family: 'Montserrat', sans-serif;
+        padding: 10px 15px;
       }
+      /************************* START 500PX MEDIA QUERY *************************/
+      @media (min-width: 500px) {
+        /**** HEADER ****/
+
+        h5 {
+          display: inline-block;
+          font-family: kansasnew, serif;
+          font-weight: 600;
+          font-style: normal;
+          font-size: 2.2rem;
+          padding-left: 5px;
+          color: #292324;
+        }
+
+        .logo a {
+          text-decoration: none;
+        }
+      }
+        /************************* END 500PX MEDIA QUERY *************************/
+      /*************************  START 630PX MEDIA QUERY *************************/
+      @media (min-width: 630px) {
+        .container {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+      }
+      /************************* END 630PX MEDIA QUERY *************************/
+      /************************* START 850PX MEDIA QUERY *************************/
+      @media (min-width: 850px) {
+
+        /* DESKTOP-NAV STYLES START*/
+        .hamburger-shell {
+          display: none;
+        }
+
+        .desktop-nav {
+          display: block;
+          text-align: right;
+          padding-top: 23px;
+          font-size: 1.3rem;
+        }
+
+        .desktop-nav ul li {
+          display: inline-block;
+          margin-right: 45px;
+        }
+
+        .desktop-nav ul li a {
+          color: #292324;
+          text-decoration: none;
+          font-weight: 400;
+        }
+
+        /***************************** NAV UNDERLINE EFFECT *****************************/
+        .link>a {
+          position: relative;
+          color: #292324;
+          text-decoration: none;
+        }
+
+        .link>a:hover {
+          color: #292324;
+          transition: all 0.3s ease-in-out 0s;
+        }
+
+        .link>a::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 10px;
+          bottom: -13px;
+          left: 0;
+          background-color: #f6ad9b;
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: all 0.3s ease-in-out 0s;
+        }
+
+        .link>a:hover::before {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+
+        /***************************** NAV UNDERLINE EFFECT *****************************/
+        /* DESKTOP-NAV STYLES END*/
+      }
+
     </style>
 
-    <!--Header-->
-    <header>
-      <nav>
-        <ul>
-  				<li><a href="../index.html#home" class="logo">
-  						<div class="logo-div"></div>
-  					</a></li>
-  				<li><a href="../index.html#about">About</a></li>
-  				<li><a href="../index.html#work">Work</a></li>
-  				<li><a href="../index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <!--Main-->
-    <main>
-  		<div class="container">
-  			<h1>Missing fields</h1>
-  			<p>Sorry, you have not completed all of the required fields.</p>
-  			<p>Please hit <a href="#" onClick="history.go(-1)">back</a> and complete the following required fields.</p>
-
-  			<ul>
-  			<?php
-  				for($i=0; $i<count($this->missing_required_fields); $i++){
-  					echo "<li>" . $this->missing_required_fields[$i]['title'] . "</li>\n";
-  				}
-  			?>
-  			</ul>
-
-  			<p><strong><a href="#" onClick="history.go(-1)">Back to form</a></strong></p>
+  	<header>
+  		<div class="logo">
+  			<a href="../index.html#home"><img src="images/home-logo.png" alt="Home Icon" title="Home Icon"></a>
+  			<a href="../index.html#home"><h5>Becky Hassler</h5></a>
   		</div>
-  	</main>
 
-  	<!--Footer-->
-  	<footer>
-  		<p>
-  			Website by Becky Hassler
-  		</p>
-  	</footer>
+  		<div class="bg-cover"></div>
+  		<div role="button" class="hamburger-shell" aria-expanded="false">
+  			<div class="top"></div>
+  			<div class="middle"></div>
+  		</div>
 
+  		<nav class="menu" id="menu">
+  			<ul>
+  				<li class="mobile-link"><a href="../index.html#home">Home</a></li>
+  				<li class="mobile-link"><a href="../index.html#about">About</a></li>
+  				<li class="mobile-link"><a href="../index.html#work">Work</a></li>
+  				<li class="mobile-link"><a href="../index.html#contact">Contact</a></li>
+  			</ul>
+  		</nav>
+
+  		<nav class="desktop-nav">
+  			<ul>
+  				<li class="link"><a href="../index.html#home">Home</a></li>
+  				<li class="link"><a href="../index.html#about">About</a></li>
+  				<li class="link"><a href="../index.html#work">Work</a></li>
+  				<li class="link"><a href="../index.html#contact">Contact</a></li>
+  			</ul>
+  		</nav>
+  	</header>
+
+      <!--Main-->
+    <main class="container site-content">
+      <h2>Missing fields</h1>
+      <p>Sorry! You haven't completed all of the required fields. Please go back to the form and complete the following required fields:
+      </p>
+
+      <div class="missing-fields-flex">
+        <ul>
+          <?php
+          for($i=0; $i<count($this->missing_required_fields); $i++){
+          echo "<li>" . $this->missing_required_fields[$i]['title'] . "</li>\n";
+          }
+          ?>
+        </ul>
+        <button class="return-button" type="button">
+          <h6><a href="#" onClick="history.go(-1)">Return to form</a></h6>
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <p>This website was designed and developed by Becky Hassler.</p>
+      <p>Copyright 2021</p>
+    </footer>
+
+    <!-- Slider -->
+    <script type="text/javascript" src="js/flickity.pkgd.js"></script>
+
+    <!-- FancyBox JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Smooth Scroll -->
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- Hamburger Menu -->
+    <script type="text/javascript" src="js/hamburger.js"></script>
   </body>
+
 </html>
