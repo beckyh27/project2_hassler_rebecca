@@ -435,7 +435,7 @@
 				</p>
 
 	      <button class="return-button" type="button">
-	          <h6><a href="./index.html#contact">Return to the main site</a></h6>
+	          <h6><a href="./index.html#home">Return to the main site</a></h6>
 	      </button>
 
 

@@ -350,7 +350,6 @@ figcaption {
 
 input:focus, textarea:focus {
     outline: none !important;
-    border: 2px solid #3c7cc3;
   }
 
 .label_input_wrap {
@@ -367,7 +366,7 @@ input:focus, textarea:focus {
 }
 
 .input-section input {
-  padding: 5px 0;
+  padding: 5px;
   border-radius: 4px;
   height: 35px;
   width: 100%;
@@ -378,7 +377,7 @@ input:focus, textarea:focus {
 
 textarea {
   border-radius: 4px;
-  padding: 10px 0;
+  padding: 10px 5px;
   width: 100%;
   height: 140px;
   font-family: 'Montserrat', sans-serif;
@@ -611,7 +610,6 @@ footer p {
 
   .about-pic {
     min-width: 315px;
-    */
   }
 
   #about h3 {
@@ -666,11 +664,14 @@ footer p {
   .submit-button {
     text-align: left;
   }
-
+}
 /************************************* END 850PX MEDIA QUERY *************************************/
-/************************************* START 1000PX MEDIA QUERY ************************************/
+/************************************* START 1000PX MEDIA QUERY
+*************************************/
 @media (min-width: 1000px) {
   #contact h3 {
     font-size: 2.7rem;
+  }
 }
-/************************************* END 1000PX MEDIA QUERY *************************************/
+/************************************* END 1000PX MEDIA QUERY
+*************************************/

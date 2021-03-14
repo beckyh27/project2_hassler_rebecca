@@ -1,17 +1,18 @@
+// https://github.com/wagerfield/parallax
+
 /**
 * Parallax.js
 * @author Matthew Wagerfield - @wagerfield, René Roth - mail@reneroth.org
 * @description Creates a parallax effect between an array of layers,
 *              driving the motion from the gyroscope output of a smartdevice.
 *              If no gyroscope is available, the cursor position is used.
-*/http://matthew.wagerfield.com/parallax/
+*/
 
-const rqAnFr = require('raf')
-const objectAssign = require('object-assign')
+import rqAnFr from 'raf'
 
 const helpers = {
   propertyCache: {},
-  vendors: [null, ['-webkit-','webkit'], ['-moz-','Moz'], ['-o-','O'], ['-ms-','ms']],
+  vendors: [null,['-webkit-','webkit'],['-moz-','Moz'],['-o-','O'],['-ms-','ms']],
 
   clamp(value, min, max) {
     return min < max
@@ -129,8 +130,6 @@ const MAGIC_NUMBER = 30,
       DEFAULTS = {
         relativeInput: false,
         clipRelativeInput: false,
-        inputElement: null,
-        hoverOnly: false,
         calibrationThreshold: 100,
         calibrationDelay: 500,
         supportDelay: 500,
@@ -140,22 +139,21 @@ const MAGIC_NUMBER = 30,
         invertY: true,
         limitX: false,
         limitY: false,
-        scalarX: 10.0,
-        scalarY: 10.0,
-        frictionX: 0.1,
-        frictionY: 0.1,
+        scalarX: 1.0,
+        scalarY: 1.0,
+        frictionX: 0.01,
+        frictionY: 0.01,
         originX: 0.5,
         originY: 0.5,
         pointerEvents: false,
-        precision: 1,
-        onReady: null,
-        selector: null
+        precision: 1
       }
 
 class Parallax {
   constructor(element, options) {
 
     this.element = element
+    this.layers = element.getElementsByClassName('layer')
 
     const data = {
       calibrateX: helpers.data(this.element, 'calibrate-x'),
@@ -173,10 +171,7 @@ class Parallax {
       pointerEvents: helpers.data(this.element, 'pointer-events'),
       precision: helpers.data(this.element, 'precision'),
       relativeInput: helpers.data(this.element, 'relative-input'),
-      clipRelativeInput: helpers.data(this.element, 'clip-relative-input'),
-      hoverOnly: helpers.data(this.element, 'hover-only'),
-      inputElement: document.querySelector(helpers.data(this.element, 'input-element')),
-      selector: helpers.data(this.element, 'selector')
+      clipRelativeInput: helpers.data(this.element, 'clip-relative-input')
     }
 
     for (let key in data) {
@@ -185,11 +180,7 @@ class Parallax {
       }
     }
 
-    objectAssign(this, DEFAULTS, data, options)
-
-    if(!this.inputElement) {
-      this.inputElement = this.element
-    }
+    Object.assign(this, DEFAULTS, data, options)
 
     this.calibrationTimer = null
     this.calibrationFlag = true
@@ -224,9 +215,7 @@ class Parallax {
 
     this.onMouseMove = this.onMouseMove.bind(this)
     this.onDeviceOrientation = this.onDeviceOrientation.bind(this)
-    this.onDeviceMotion = this.onDeviceMotion.bind(this)
     this.onOrientationTimer = this.onOrientationTimer.bind(this)
-    this.onMotionTimer = this.onMotionTimer.bind(this)
     this.onCalibrationTimer = this.onCalibrationTimer.bind(this)
     this.onAnimationFrame = this.onAnimationFrame.bind(this)
     this.onWindowResize = this.onWindowResize.bind(this)
@@ -237,7 +226,7 @@ class Parallax {
     this.windowCenterY = null
     this.windowRadiusX = null
     this.windowRadiusY = null
-    this.portrait = false
+    this.portrait = null
     this.desktop = !navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i)
     this.motionSupport = !!window.DeviceMotionEvent && !this.desktop
     this.orientationSupport = !!window.DeviceOrientationEvent && !this.desktop
@@ -275,23 +264,8 @@ class Parallax {
     this.queueCalibration(this.calibrationDelay)
   }
 
-  doReadyCallback() {
-    if(this.onReady) {
-      this.onReady()
-    }
-  }
-
   updateLayers() {
-    if(this.selector) {
-      this.layers = this.element.querySelectorAll(this.selector)
-    } else {
-      this.layers = this.element.children
-    }
-
-    if(!this.layers.length) {
-      console.warn('ParallaxJS: Your scene does not have any layers.')
-    }
-
+    this.layers = this.element.getElementsByClassName('layer')
     this.depthsX = []
     this.depthsY = []
 
@@ -323,7 +297,7 @@ class Parallax {
   }
 
   updateBounds() {
-    this.bounds = this.inputElement.getBoundingClientRect()
+    this.bounds = this.element.getBoundingClientRect()
     this.elementPositionX = this.bounds.left
     this.elementPositionY = this.bounds.top
     this.elementWidth = this.bounds.width
@@ -346,19 +320,18 @@ class Parallax {
     this.enabled = true
 
     if (this.orientationSupport) {
-      this.portrait = false
+      this.portrait = null
       window.addEventListener('deviceorientation', this.onDeviceOrientation)
-      this.detectionTimer = setTimeout(this.onOrientationTimer, this.supportDelay)
+      setTimeout(this.onOrientationTimer, this.supportDelay)
     } else if (this.motionSupport) {
-      this.portrait = false
+      this.portrait = null
       window.addEventListener('devicemotion', this.onDeviceMotion)
-      this.detectionTimer = setTimeout(this.onMotionTimer, this.supportDelay)
+      setTimeout(this.onMotionTimer, this.supportDelay)
     } else {
       this.calibrationX = 0
       this.calibrationY = 0
       this.portrait = false
       window.addEventListener('mousemove', this.onMouseMove)
-      this.doReadyCallback()
     }
 
     window.addEventListener('resize', this.onWindowResize)
@@ -413,11 +386,6 @@ class Parallax {
     this.originY = y === undefined ? this.originY : y
   }
 
-  setInputElement(element) {
-    this.inputElement = element
-    this.updateDimensions()
-  }
-
   setPosition(element, x, y) {
     x = x.toFixed(this.precision) + 'px'
     y = y.toFixed(this.precision) + 'px'
@@ -436,8 +404,6 @@ class Parallax {
       this.disable()
       this.orientationSupport = false
       this.enable()
-    } else {
-      this.doReadyCallback()
     }
   }
 
@@ -446,8 +412,6 @@ class Parallax {
       this.disable()
       this.motionSupport = false
       this.enable()
-    } else {
-      this.doReadyCallback()
     }
   }
 
@@ -496,8 +460,8 @@ class Parallax {
 
   rotate(beta, gamma){
     // Extract Rotation
-    let x = (beta || 0) / MAGIC_NUMBER, //  -90 :: 90
-        y = (gamma || 0) / MAGIC_NUMBER // -180 :: 180
+    let x = (beta || event.beta || 0) / MAGIC_NUMBER, //  -90 :: 90
+        y = (gamma || event.gamma || 0) / MAGIC_NUMBER // -180 :: 180
 
     // Detect Orientation Change
     let portrait = this.windowHeight > this.windowWidth
@@ -519,7 +483,7 @@ class Parallax {
   onDeviceOrientation(event) {
     let beta = event.beta
     let gamma = event.gamma
-    if (beta !== null && gamma !== null) {
+    if (!this.desktop && beta !== null && gamma !== null) {
       this.orientationStatus = 1
       this.rotate(beta, gamma)
     }
@@ -528,7 +492,7 @@ class Parallax {
   onDeviceMotion(event) {
     let beta = event.rotationRate.beta
     let gamma = event.rotationRate.gamma
-    if (beta !== null && gamma !== null) {
+    if (!this.desktop && beta !== null && gamma !== null) {
       this.motionStatus = 1
       this.rotate(beta, gamma)
     }
@@ -538,16 +502,7 @@ class Parallax {
     let clientX = event.clientX,
         clientY = event.clientY
 
-    // reset input to center if hoverOnly is set and we're not hovering the element
-    if(this.hoverOnly &&
-      ((clientX < this.elementPositionX || clientX > this.elementPositionX + this.elementWidth) ||
-      (clientY < this.elementPositionY || clientY > this.elementPositionY + this.elementHeight))) {
-        this.inputX = 0
-        this.inputY = 0
-        return
-      }
-
-    if (this.relativeInput) {
+    if (!this.orientationSupport && this.relativeInput) {
       // Clip mouse coordinates inside element bounds.
       if (this.clipRelativeInput) {
         clientX = Math.max(clientX, this.elementPositionX)
@@ -568,27 +523,6 @@ class Parallax {
       }
     }
   }
-
-  destroy() {
-    this.disable()
-
-    clearTimeout(this.calibrationTimer)
-    clearTimeout(this.detectionTimer)
-
-    this.element.removeAttribute('style')
-    for (let index = 0; index < this.layers.length; index++) {
-      this.layers[index].removeAttribute('style')
-    }
-
-    delete this.element
-    delete this.layers
-  }
-
-  version() {
-    return '3.1.0'
-  }
-  var scene = document.getElementById('scene');
-  var parallaxInstance = new Parallax(scene);
 
 }
 

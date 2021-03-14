@@ -31,13 +31,14 @@
 				<script src="js/html5shiv-printshiv.min.js"></script>
 			<![endif]-->
 
-			<script type="text/javascript">
-				$('.paralax-background').parallaxBackground({
-				event: 'mouse_move',
-				animation_type: 'shift',
-				animate_duration: 2
-				});
-			</script>
+	<!-- Script -->
+	<script type="text/javascript">
+		$('.paralax-background').parallaxBackground({
+		event: 'mouse_move',
+		animation_type: 'shift',
+		animate_duration: 2
+		});
+	</script>
 
 </head>
 
@@ -80,8 +81,8 @@
 
 				<div id="scene" data-hover-only="true" data-relative-input="true" class="scene border">
 
-					<div data-depth=".1">
-						<img class="home-shapes" src="images/home-shapes.png" alt="Decorative Shapes" title="Decorative Shapes">
+					<div data-depth="1">
+						<img class="layer home-shapes" src="images/home-shapes.png" alt="Decorative Shapes" title="Decorative Shapes">
 					</div>
 				</div>
 
@@ -133,49 +134,49 @@
 
 					<div class="carousel-cell">
 						<a target="_blank" href="images/nature-conservancy-project.pdf">
-							<img class="carousel-image" data-flickity-lazyload="images/nature-conservancy-project.jpg">
+							<img alt="Mountain Landscape" class="carousel-image" src="images/nature-conservancy-project.jpg" data-flickity-lazyload="images/nature-conservancy-project.jpg">
 						</a>
 					</div>
 
 					<div class="carousel-cell">
 						<a href="images/ebook-project.jpg" data-fancybox="gallery" data-caption="This is an eBook cover for The Perks of Being a Wallflower by Stephen Chbosky.">
-							<img class="carousel-image" data-flickity-lazyload="images/ebook-project-thumbnail.jpg">
+							<img alt="Book cover for The Perks of Being a Wallflower" class="carousel-image" src="images/ebook-project-thumbnail.jpg" data-flickity-lazyload="images/ebook-project-thumbnail.jpg">
 						</a>
 					</div>
 
 					<div class="carousel-cell">
 						<a href="images/desktop-project.png" data-fancybox="gallery" data-caption="This is the desktop website redesign for the makeup brand Shared Planet.">
-							<img class="carousel-image" data-flickity-lazyload="images/desktop-project-thumbnail.png">
+							<img alt="Desktop website design with image of women and tiger" class="carousel-image" src="images/desktop-project-thumbnail.png" data-flickity-lazyload="images/desktop-project-thumbnail.png">
 						</a>
 					</div>
 
 					<div class="carousel-cell">
 						<a href="images/mobile-project.png" data-fancybox="gallery" data-caption="This is the desktop website redesign for the makeup brand Shared Planet.">
-							<img class="carousel-image" data-flickity-lazyload="images/mobile-project-thumbnail.png">
+							<img alt="Mobile website design with image of women and tiger" class="carousel-image" src="images/mobile-project-thumbnail.png" data-flickity-lazyload="images/mobile-project-thumbnail.png">
 						</a>
 					</div>
 
 					<div class="carousel-cell">
 						<a href="images/facebook-project.gif" data-fancybox="gallery" data-caption="This is an ad designed for Facebook for travel brand Travel Vida.">
-							<img class="carousel-image" data-flickity-lazyload="images/facebook-project.gif">
+							<img alt="Taking a photo of a sunset with a phone" class="carousel-image" src="images/facebook-project.gif" data-flickity-lazyload="images/facebook-project.gif">
 						</a>
 					</div>
 
 					<div class="carousel-cell">
 						<a href="images/twitter-project.png" data-fancybox="gallery" data-caption="This is an ad designed for Instagram for travel brand Travel Vida.">
-							<img class="carousel-image" data-flickity-lazyload="images/twitter-project.png">
+							<img alt="Taking a photo of a woman in green grass with a phone" class="carousel-image" src="images/twitter-project.png" data-flickity-lazyload="images/twitter-project.png">
 						</a>
 					</div>
 
 					<div class="carousel-cell">
 						<a href="images/instagram-project.jpg" data-fancybox="gallery" data-caption="This is an ad designed for Instagram for travel brand Travel Vida.">
-							<img class="carousel-image" data-flickity-lazyload="images/instagram-project.jpg">
+							<img alt="Taking a photo of a woman in a blue lake with a phone" class="carousel-image" src="images/instagram-project.jpg" data-flickity-lazyload="images/instagram-project.jpg">
 						</a>
 					</div>
 
 					<div class="carousel-cell">
 						<a href="images/email-project.jpg" data-fancybox="gallery" data-caption="This is an email blast designed for an adoption event for animal shelter Alachua County Humane Society.">
-							<img class="carousel-image" data-flickity-lazyload="images/email-project-thumbnail.jpg">
+							<img alt="Email design with dog licking ice cream cone" class="carousel-image" src="images/email-project-thumbnail.jpg" data-flickity-lazyload="images/email-project-thumbnail.jpg">
 						</a>
 					</div>
 
@@ -229,9 +230,9 @@
 					</div>
 
 					<div class="submit-button">
-						<button class="submit" type="button">
+						<div class="submit">
 							<input type="submit" value="Send">
-						</button>
+						</div>
 					</div>
 
 				</form>
@@ -263,12 +264,12 @@
 	<!-- Interactive Moving Background -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 	<script src="js/parallax.js"></script>
+
 	<script>
-
-	var scene = document.getElementById('scene');
-	var parallax = new Parallax(scene);
-
+		var scene = document.getElementById('scene');
+		var parallax = new Parallax(scene);
 	</script>
+
 </body>
 
 </html>
