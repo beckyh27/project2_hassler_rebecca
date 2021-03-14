@@ -1,3 +1,4 @@
+// https://flickity.metafizzy.co/options.html
 /*!
  * Flickity PACKAGED v2.2.0
  * Touch, responsive, flickable carousels

@@ -326,6 +326,7 @@ figcaption {
 
 .contact-shapes-line {
   width: 90%;
+  max-width: 1644px;
 }
 
 .contact-content-flex {
@@ -651,6 +652,7 @@ footer p {
   .contact-shapes {
     display: block;
     width: 90%;
+    max-width: 1079px;
   }
 
   .contact-form {
