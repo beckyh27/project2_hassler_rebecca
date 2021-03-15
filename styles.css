@@ -8,11 +8,16 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
   display: block;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /************************* STICKY FOOTER  *************************/
 .site {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  align-items: center;
 }
 
 .site-content {
@@ -40,11 +45,13 @@ red #f04c1f
 medium blue #3c7cc3 */
 /* light blue #53cbdc
 yellow #f0b32a */
+
 body {
   background-color: #fcf1e7;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   color: #292324;
+  overflow-x: hidden;
 }
 
 header {
@@ -235,7 +242,6 @@ h5 {
 
 .home-text {
   position: absolute;
-  width: 500px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -430,6 +436,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 footer p {
